@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; /* Simplifie les calculs dans le  cas où on a des padding ou margin */
+    font-family: "Raleway", sans-serif;
+}
+
+a{
+    text-decoration: 0; /*retire le souligné*/ 
+}
+html{
+    font-size: 62.5%; /* Par défaut, la taille de police des navigateurs est généralement de 16 pixels. ici on a donc 16*62.5=10px */
+    scroll-behavior: smooth ; /*améliorer l'expérience utilisateur en rendant le déplacement sur la page plus fluide et agréable visuellement.*/
+    scroll-padding-top: 9px; /*ajoute un espace en haut de la zone de défilement cible. Ici, 9px d'espace sont ajoutés, garantissant que l'élément cible n'est pas couvert par une barre fixe ou un autre élément.*/
+}
+::-webkit-scrollbar{
+    width: 8px; /* 8px pour la barre de défilement */ 
+}
+::-webkit-scrollbar-thumb{
+    background-color: #ccc; /*Cible la partie "thumb", cad la partie que l'utilisateur peut faire glisser pour faire défiler la page*/
+}
+
+body{
+    background-color: #111;
+}
+
+section{
+    margin-top: 50px;
+}
+
+header{
+    background-color: #222; /*fond du header*/ 
+    position: fixed; /* garde le header toujours visible*/ 
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /*superposition des élements, évite d'etre recouvert par menu déroulant, body, ... */ 
+    display: flex; /*alignement*/ 
+    align-items: center; 
+    justify-content: space-between; /* propriété distribue l'espace entre les éléments enfants, en plaçant le premier élément à l'extrême gauche, le dernier à l'extrême droite, et les autres de manière égale entre eux. */
+    height: 50px; /* hauteur du header */ 
+    padding: 0 5%; 
+     
+}
+
+header .logo a {
+    font-size: 25px;
+    color: #29d9d5;
+    
+}
+
+header .logo a span{
+    color: #fff;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+}
+
+.menu li{
+    margin: 0 15px;
+    list-style-type: none; /*supprime les puces*/ 
+}
+
+.menu li a {
+    color: #fff;
+    font-size: 14px;
+}
+
+.btn-nouveaute{
+    color: #29d9d5;
+    font-size: 14px;
+    border: 2px solid #29d9d5; /* Fais un encadré autour*/ 
+    padding: 5px 20px;
+    transition: 0.5s;
+    font-weight: bolder;
+}
+.btn-nouveaute:hover{
+    background-color: #29d9d5;
+    color: #fff;
+   
+}
+
+/* Home accueil - CSS */ 
+#home{
+    background: linear-gradient(rgba(0,0,0,0.1),#333), url(media/pexels-lina.png); /* propriété applique deux arrière-plans superposés. Le premier est un dégradé linéaire qui va d'une couleur semi-transparente (rgba(0,0,0,0.1)) à un gris foncé (#333). Le second est une image de fond située dans le répertoire media, nommée pexels-lina-1741230.jpg. */  
+    background-position: center; /* img centrée */ 
+    background-size: cover; /* img couvre la page */ 
+   /* height: calc(100vh - 50px);  prend toute la fenetre mais retire les 50px du header ci dessus */ 
+   height: 100vh;
+    display: flex;
+    align-items: center; /* align vertricalement */ 
+    justify-content: center; /*centre horizontalement */ 
+    flex-direction: column; /* Aligne sur une colonne */ 
+    position: relative; /* relative par rapport à une position absolue ou fixe */ 
+
+}
+
+#home h2{
+    font-size: 45px;
+    margin-bottom: 10px;
+    -webkit-text-stroke: #fff 0.5px; /* ajoute un contour tres fin autour du texte (0.5px) */
+    color: transparent;
+}
+
+#home h4{
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+#home p{
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.home-btn{
+    margin-bottom: 20px;
+}
+
+.find_book{
+    background-color: #222;
+    padding: 20px;
+    width: 70%;
+    position: absolute;
+    bottom: -50px;
+}
+
+.find_book form{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.find_book form div, .find_book form input[type="submit"] { /*S'applique à tous les input de type "submit" */ 
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.find_book form label{
+    color: #999;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.find_book form input{
+    padding: 5px 20px;
+    background-color: transparent;
+    border: 1px solid #29d9d5;
+    outline: 0; /*Supprime les contours - Pas idéal pour l'accessibilité*/ 
+    width: 100%;
+    font-size: 13px;
+    color: #fff;
+}
+
+.find_book form input[type="submit"]{
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    color: #29d9d5;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.find_book form input[type="submit"]:hover{
+    box-shadow: 0 0 10px #29d9d5; /* Effet lumineux au passage de la souris */ 
+}
+
+/* A propos - CSS */ 
+
+#a-propos{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding: 0 10%;
+    width: 100%;
+}
+
+.title{
+    text-transform: capitalize;
+    margin:  70px 0;
+    font-weight: bold;
+    color: #29d9d5 ;
+    position: relative;
+    margin-left: 15px;
+    font-size: 18px;
+}
+
+.title::after{
+    position: absolute;
+    left: -15px;
+    content: ""; /*Obligatoire avec le after, il génére le pseudo element */ 
+    height: 100%; /* Hauteur du pseudo element*/
+    background-color: #fff;
+    width: 5px; /*largeur*/ 
+}
+
+.img-desc{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.img-desc .left{
+    position: relative;
+    margin-left: 10px;
+    height: 250px;
+    width: 30%;
+}
+
+.img-desc .right{
+    width: 67%;
+}
+
+.img-desc .left iframe{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 10px #29d9d5;
+}
+
+.img-desc .left::after{
+    position: absolute;
+    bottom: -2px; /*bordure bas*/ 
+    right: 2px;
+    content: "";
+    height: 100%;
+    background-color: #29d9d5;
+    width: 100%;
+    z-index: -1;
+}
+
+.img-desc .right h3{
+    color: #fff;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.img-desc .right p{
+    color: #999;
+    font: 14px; /* font est plus global comparé à font-size, font-weight... ex: font: bold 16px/1.5 Arial, sans-serif;*/
+    margin-bottom: 36px;
+}
+
+.img-desc .right a{
+    border: 1px solid #29d9d5;
+    color: #29d9d5;
+    font-size: 14px;
+    padding: 8px 25px;
+    font-weight: bold;
+}
+
+/* Livres populaires*/
+#popular-book{
+    padding: 0 10%;
+    margin-bottom: 50px;
+}
+
+#popular-book .content {
+    display: grid; /*Modéle en grille. Permet de créer des mises en page complexes avec des lignes et des colonnes, facilitant la gestion de l'espace entre les éléments et leur alignement.*/ 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* définit la disposition. 
+    auto-fit : Crée automatiquement des colonnes pour s'adapter à l'espace disponible. S'il y a plus de place, il ajuste le nombre de colonnes pour s'adapter.
+    minmax(300px, 1fr) : Chaque colonne a une largeur minimale de 300px et une largeur maximale de 1fr (une fraction de l'espace disponible). Cela signifie que les colonnes peuvent se réduire à 300px mais s'étendent pour remplir l'espace disponible de manière flexible.
+    */
+    gap:32px; /* Définit l'espacement entre les éléments de la grille.  ici 32 px entre chaque livres*/ 
+}
+
+#popular-book .content .box {
+    overflow: hidden; /* masque le contenu qui dépasse*/ 
+    position: relative;
+    height: 250px;
+    transition: 0.5s;
+}
+
+#popular-book .content .box img {
+    height: 100%;
+    width: 100%;
+    object-fit: fill; /*Affichage de l'img */ 
+}
+
+.box .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: 0.5s;
+}
+
+.box .content h4{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+.box .content p{
+    padding: 2px;
+    font-size: 12px;
+}
+
+/* Cible le troisième enfant <p> dans son parent immédiat. Cela signifie que cette règle ne s'applique qu'au troisième paragraphe au sein de son conteneur parent .content.*/
+.box .content p:nth-child(3){
+    margin-bottom: 25px;
+}
+
+.box .content a {
+    margin-top: 60px;
+    padding: 10px 60px;
+    border: 2px solid #29d9d5;
+    color: #29d9d5;
+    font-weight: bold;
+}
+
+.box:hover{
+    box-shadow: 0 0 10px #29d9d5;
+}
+
+
+.box:hover .content{
+    transform: translateX(0);
+}
+
+/* Contact CSS */ 
+
+#contact{
+    padding: 0 10%;
+    margin-bottom: 50px;
+    height: 90vh;
+}
+
+#contact form{
+    background-color: #fff;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.left-right{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.left-right .left , .left-right .right {
+    display: flex;
+    font-size: 14px;
+    flex-direction: column;
+    width: 49%;
+}
+
+#contact form label{
+    font-size: 14px;
+    padding: 10px 0;
+    font-weight: 600;
+}
+
+#contact form input {
+    padding: 8px;
+    outline: 0;
+    border: 1px solid #999;
+}
+
+textarea{
+    height: 150px;
+    resize: none; /*permet de ne pas redimensionner la case du message */ 
+    outline: 0;
+    width: 100%;
+    padding: 10px;
+}
+
+#contact form input:focus , textarea:focus { /* lorsqu'on a cliqué à l'intérieur d'une case du form*/ 
+    border: 1px solid #29d9d5;
+}
+
+iframe{
+    height: 150px;
+    width: 100%;
+}
+
+#contact button{
+    width: fit-content;
+    padding: 8px 40px;
+    background-color: #111;
+    border: 1px solid #111;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#contact button:hover{
+    letter-spacing: 1px;
+}
+
+footer{
+    width: 100%;
+    background-color: #222;
+    padding: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+footer p {
+    color: #fff;
+}
+
+footer p span{
+    color: #29d9d5;
+}
+
+.responsive-menu{
+    display: none;
+}
+
+/* RESPONSIVE */ 
+@media(max-width:750px){
+    header .menu{
+        display: none;
+    }
+
+    .btn-nouveaute{
+        display: none;
+    }
+    /*Home Responsive*/ 
+    #home h2{
+        font-size: 18px;
+        -webkit-text-stroke: 0;
+    }
+    #home h4{
+        font-size: 28px;
+    }
+
+    .find_book{
+        width: 100%;
+        height: 200px;
+
+    }
+
+    .find_book form{
+        flex-wrap: wrap;
+    }
+
+    .find_book form div{
+        margin-top: 10px;
+        flex-direction: column;
+        width: 47%;
+    }
+
+    .find_book form input[type="submit"]{
+        width: 47%;
+    }
+
+    .home-btn{
+        display: block;
+
+    }
+
+    /*A propos ReSPONSIVE*/ 
+    .img-desc{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .img-desc .left , .img-desc .right{
+        width: 100%;
+    }
+
+    .img-desc .left video{
+        width: 100%;
+    }
+
+    .img-desc .left::after{
+        background-color: transparent;
+    }
+    .img-desc .left{
+        margin-bottom: 20px;
+    }
+
+
+
+    /* Responsive MENU */ 
+    .responsive-menu{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+
+    }
+    .responsive-menu::after{ /* Permet de mettre un "hamburger 2 traits" pour menu*/ 
+        position: absolute;
+        content: "";
+        height: 3px;
+        background-color: #29d9d5;
+        width: 28px;
+        box-shadow: 0 10px 0 #29d9d5;
+        transform: translateY(-10px);
+        transition: 0.5s;
+    }
+
+    .responsive-menu.active::after{
+        box-shadow: 0 0 0 #29d9d5;
+        transform: rotate(45deg);
+
+    }
+
+    .responsive-menu::before{ /* Permet de mettre un "hamburger 3é trait" pour menu*/ 
+        position: absolute;
+        content: "";
+        height: 3px;
+        background-color: #29d9d5;
+        width: 28px;
+        transform: translateY(10px);
+        transition: 0.5s;
+    }
+
+    .responsive-menu.active::before{
+       
+        transform: rotate(-45deg);
+
+    }
+
+    header .menu.responsive{
+        display: flex;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        flex-direction: column;
+        background-color: #222;
+        align-items: unset;
+        animation: animate-menu 1s forwards;
+    }
+
+    header .menu.responsive li{
+        margin : 20px;
+        width: 100px;
+        padding-left: 20px;
+    }
+
+    @keyframes animate-menu {
+        0%{
+            transform: translateY(0);
+        }
+        100%{
+            transform: translateY(20%);
+        }
+    }
+
+}
