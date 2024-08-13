@@ -55,17 +55,6 @@ header .logo a span{
     color: #fff;
 }
 
-.fa-square-instagram{
-    
-    height: 50px;
-}
-
-.social i {
-    width: 100px; /* Taille des logos, à ajuster selon besoin */
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
 
 .menu{
     display: flex;
@@ -82,27 +71,32 @@ header .logo a span{
     font-size: 14px;
 }
 
-.btn-nouveaute{
+.btn-connexion{
     color: #29d9d5;
     font-size: 14px;
-    border: 2px solid #29d9d5; /* Fais un encadré autour*/ 
+    /* border: 2px solid #29d9d5; Fais un encadré autour*/ 
     padding: 5px 20px;
     transition: 0.5s;
     font-weight: bolder;
 }
-.btn-nouveaute:hover{
-    background-color: #29d9d5;
+.btn-connexion:hover{
+    /*background-color: #29d9d5;*/
     color: #fff;
-   
+}
+
+.fa-user {
+    margin-right: 7px;
+    font-size: 1.2em;
 }
 
 /* Home accueil - CSS */ 
 #home{
-    background: linear-gradient(rgba(0,0,0,0.1),#333), url(media/pexels-lina.png); /* propriété applique deux arrière-plans superposés. Le premier est un dégradé linéaire qui va d'une couleur semi-transparente (rgba(0,0,0,0.1)) à un gris foncé (#333). Le second est une image de fond située dans le répertoire media, nommée pexels-lina-1741230.jpg. */  
+    background: linear-gradient(rgba(0,0,0,0.1),#333), url(media/pexels-lina.png); 
+    /* propriété applique deux arrière-plans superposés. Le premier est un dégradé linéaire qui va d'une couleur semi-transparente (rgba(0,0,0,0.1)) à un gris foncé (#333). Le second est une image de fond située dans le répertoire media, nommée pexels-lina-1741230.jpg. */  
     background-position: center; /* img centrée */ 
     background-size: cover; /* img couvre la page */ 
    /* height: calc(100vh - 50px);  prend toute la fenetre mais retire les 50px du header ci dessus */ 
-   height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center; /* align vertricalement */ 
     justify-content: center; /*centre horizontalement */ 
@@ -129,6 +123,7 @@ header .logo a span{
     color: #fff;
     margin-bottom: 10px;
     font-size: 12px;
+    margin: 10px 25px;
 }
 
 .home-btn{
@@ -440,9 +435,6 @@ footer p span{
         display: none;
     }
 
-    .btn-nouveaute{
-        display: none;
-    }
     /*Home Responsive*/ 
     #home h2{
         font-size: 18px;
@@ -476,6 +468,7 @@ footer p span{
         display: block;
 
     }
+
 
     /*A propos ReSPONSIVE*/ 
     .img-desc{
