@@ -55,21 +55,6 @@ header .logo a span{
     color: #fff;
 }
 
-/* Social */
-
-.social{
-        /*background-color: #222;*/ 
-        position: fixed;
-        left: 0; /* Aligné à gauche */
-        top: 50%; /* Positionné à 50% du haut de la fenêtre */
-        transform: translateY(-50%); /* Centré verticalement */
-        display: flex;
-        flex-direction: column; /* Les logos seront empilés verticalement */
-        gap: 20px; /* Espace entre les logos */
-        z-index: 1000; /* Assure que les icônes sont au-dessus des autres éléments */
-        padding-left: 10px; /* Espace pour éviter que les logos ne touchent le bord gauche */
-}
-
 .fa-square-instagram{
     
     height: 50px;
@@ -80,8 +65,6 @@ header .logo a span{
     height: auto;
     transition: transform 0.3s ease;
 }
-
-
 
 
 .menu{
