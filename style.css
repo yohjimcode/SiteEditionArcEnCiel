@@ -55,6 +55,18 @@ header .logo a span{
     color: #fff;
 }
 
+.fa-square-instagram{
+    
+    height: 50px;
+}
+
+.social i {
+    width: 100px; /* Taille des logos, à ajuster selon besoin */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+
 .menu{
     display: flex;
     align-items: center;
