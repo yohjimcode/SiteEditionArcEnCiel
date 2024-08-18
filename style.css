@@ -450,6 +450,11 @@ footer p span{
 
     }
 
+    .find_book ::placeholder{
+        font-size: 14px;
+    }
+
+
     .find_book form{
         flex-wrap: wrap;
     }
